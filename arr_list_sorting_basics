@@ -1,0 +1,66 @@
+listik = [1, 23, 5, 7, 2, 14, 666, 0]
+
+def insertion_sort(a):          # сортировка вставками O(n^2)
+    n = len(a)
+    for i in range(1, n):
+        k = a[i]
+        j = i - 1
+        while a[j] > k and j >= 0:
+            a[j+1] = a[j]
+            j -= 1
+        a[j+1] = k
+    return a
+
+print(insertion_sort(listik))
+
+def insertion_sort(a):          # сортировка вставками O(n^2) другой код
+    n = len(a)
+    for i in range(1, n):
+        k = i
+        while a[k] > a[k-1] and k > 0:
+            a[k], a[k-1] = a[k-1], a[k]
+            k -= 1
+            
+insertion_sort(listik)
+            
+print(listik)
+
+def insertion_sort(a, n):        # сортировка вставками O(n^2) рекурсия O(n)
+    if n > 0:
+        insertion_sort(a, n - 1)
+        k = a[n-1]
+        j = n - 2
+        while j >= 0 and a[j] < k:
+            a[j+1] = a[j]
+            j -= 1
+        a[j+1] = k
+    return a
+
+print(insertion_sort(listik, len(listik)))
+
+def selection_sort(a):              # сортировка выбором O(n^2)
+    n = len(a)
+    for i in range(n-1):
+        for j in range(i+1, n):
+            if a[j] > a[i]:
+                a[j], a[i] = a[i], a[j]
+    return a
+
+print(listik)
+print(selection_sort(listik))                
+
+def bubble_sort(a):                 # сортировка пузырьком O(n^2) в коде три способа outer loop
+    n = len(a)
+    # while n > 1:
+    for j in range(n):
+        # nn = 0
+        for i in range(1, n-j):
+            if a[i-1] > a[i]:
+                a[i], a[i-1] = a[i-1], a[i]
+                # nn = i
+        # n -= 1
+        # n = nn  
+    return a
+
+print(listik)
+print(bubble_sort(listik))
