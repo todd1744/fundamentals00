@@ -1,0 +1,13 @@
+n, m = int(input()), int(input())         # матрица
+b = [input() for _ in range(n * m)]
+a = [[0] * m for i in range(n)]
+elcount = 0
+for i in range(n):
+    for j in range(m):
+        a[i][j] = b[elcount]
+        elcount += 1
+    
+for r in range(n):
+    for c in range(m):
+        print(a[r][c], end=' ')
+    print()
