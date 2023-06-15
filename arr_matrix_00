@@ -11,3 +11,12 @@ for r in range(n):
     for c in range(m):
         print(a[r][c], end=' ')
     print()
+
+b = ['под', 'мкадом', 'родился', 'под', 'мкадом', 'и сдохну', 'c.есенин', ' ', '']      # вывод матрицы без создания списков
+n, m = 3, 3
+c = 0
+for i in range(n):
+    for j in range(m):
+        print(b[c].ljust(3), end=' ')
+        c += 1
+    print()
